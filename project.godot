@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game with peter pinball"
-run/main_scene="uid://1i63ekuhe6bb"
+run/main_scene="uid://bfi7ctnrjldxf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

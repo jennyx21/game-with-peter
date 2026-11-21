@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bfi7ctnrjldxf"]
+
+[ext_resource type="PackedScene" uid="uid://1i63ekuhe6bb" path="res://table.tscn" id="1_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://bkalhrcrfjumj" path="res://assets/Hintergrund.png" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://jv1b1jamd58e" path="res://ball.tscn" id="3_feb5d"]
+
+[node name="game" type="Node2D" unique_id=1239581724]
+
+[node name="Flipper" parent="." unique_id=142346181 instance=ExtResource("1_e2o6t")]
+position = Vector2(547, -84)
+
+[node name="backgrounf" type="Sprite2D" parent="." unique_id=860758243]
+position = Vector2(583, -371)
+texture = ExtResource("2_feb5d")
+
+[node name="ball" parent="." unique_id=1184453513 instance=ExtResource("3_feb5d")]
+position = Vector2(93, 49)
