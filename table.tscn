@@ -1,61 +1,50 @@
 [gd_scene format=3 uid="uid://1i63ekuhe6bb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1emcc"]
-size = Vector2(648, 14.500004)
-
 [node name="Flipper" type="Node2D" unique_id=142346181]
 
-[node name="Area2D" type="Area2D" parent="." unique_id=459676730]
-position = Vector2(616, 304)
+[node name="Environment" type="Node2D" parent="." unique_id=1693902045]
 
-[node name="Left Outer Wall" type="CollisionShape2D" parent="Area2D" unique_id=1264834346]
-position = Vector2(-296.00003, -111.99999)
-rotation = 1.5707964
-scale = Vector2(1.98, 1)
-shape = SubResource("RectangleShape2D_1emcc")
+[node name="Walls" type="StaticBody2D" parent="Environment" unique_id=1799433812]
 
-[node name="Right Outer Wall" type="CollisionShape2D" parent="Area2D" unique_id=1648579706]
-position = Vector2(432, -112)
-rotation = 1.5707964
-scale = Vector2(1.98, 1)
-shape = SubResource("RectangleShape2D_1emcc")
+[node name="Left Wall" type="CollisionPolygon2D" parent="Environment/Walls" unique_id=1070234546]
+position = Vector2(-427, 406)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(7, -925, 8, 320, -8, 320, -320, 320, -8, 64, -9, -287, -52, -340, -10, -722, -10, -925)
 
-[node name="Top Outer Wall" type="CollisionShape2D" parent="Area2D" unique_id=1417977700]
-position = Vector2(88, -752)
-scale = Vector2(1.19, 1)
-shape = SubResource("RectangleShape2D_1emcc")
+[node name="Right Outer Wall" type="CollisionPolygon2D" parent="Environment/Walls" unique_id=14164531]
+position = Vector2(486, -106)
+polygon = PackedVector2Array(8, 0, 8, 832, -8, 832, -8, 192, -16, 144, -24, 112, -32, 96, -40, 88, -8, 64, -8, -448, 8, -448)
 
-[node name="Right Inner Wall" type="CollisionShape2D" parent="Area2D" unique_id=1356537291]
-position = Vector2(360, 208)
-rotation = -1.5707964
-shape = SubResource("RectangleShape2D_1emcc")
+[node name="Right Inner Wall" type="CollisionPolygon2D" parent="Environment/Walls" unique_id=1135263414]
+position = Vector2(427, 406)
+polygon = PackedVector2Array(8, -320, 8, 320, -8, 320, -320, 320, -8, 64, -8, -352, 0, -344)
 
-[node name="Left Jargon Inlane" type="CollisionShape2D" parent="Area2D" unique_id=509658017]
-position = Vector2(-208, 344)
-rotation = 0.43633232
-scale = Vector2(0.295, 1)
-shape = SubResource("RectangleShape2D_1emcc")
+[node name="Right Inline" type="CollisionPolygon2D" parent="Environment/Walls" unique_id=768238073]
+position = Vector2(285, 390.99994)
+scale = Vector2(1.37, 1.37)
+polygon = PackedVector2Array(62, -160, 61, 28, -95, 111, -94, 106, -95, 102, -98, 100, -101, 99, 53, 13, 53, -160)
 
-[node name="Right Jargon Inlane" type="CollisionShape2D" parent="Area2D" unique_id=1716352075]
-position = Vector2(272, 344)
-rotation = -0.43633232
-scale = Vector2(0.295, 1)
-shape = SubResource("RectangleShape2D_1emcc")
+[node name="Left Inline" type="CollisionPolygon2D" parent="Environment/Walls" unique_id=434831469]
+position = Vector2(-285, 391)
+scale = Vector2(-1.37, 1.37)
+polygon = PackedVector2Array(62, -160, 61, 28, -95, 111, -94, 106, -95, 102, -98, 100, -101, 99, 53, 13, 53, -160)
 
-[node name="Paddle Left" type="AnimatableBody2D" parent="Area2D" unique_id=139743446]
-position = Vector2(1368, -560)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/Walls" unique_id=849797895]
+position = Vector2(0, -520)
+polygon = PackedVector2Array(-432, 0, -408, -72, -360, -136, -304, -176, -256, -192, 0, -192, 320, -192, 376, -176, 432, -136, 472, -72, 496, 0, 480, 0, 464, -64, 424, -128, 376, -160, 320, -176, 0, -176, -256, -176, -304, -160, -352, -128, -400, -64, -416, 0)
 
-[node name="Paddle Left Body" type="CollisionPolygon2D" parent="Area2D/Paddle Left" unique_id=1149686038]
-position = Vector2(-1473.805, 951.05)
-rotation = 0.43633232
-scale = Vector2(0.25, 0.17)
-polygon = PackedVector2Array(0, -64, -32, -56, -56, -32, -64, 0, -56, 32, -32, 56, 0, 64, 416, 32, 432, 24, 440, 16, 448, 0, 440, -16, 432, -24, 416, -32)
+[node name="Mechanics" type="Node2D" parent="." unique_id=233866893]
+visible = false
 
-[node name="Paddle Right" type="AnimatableBody2D" parent="Area2D" unique_id=1128142517]
-position = Vector2(1320, -560)
+[node name="Paddle Left" type="AnimatableBody2D" parent="Mechanics" unique_id=139743446]
+position = Vector2(-172, 325)
 
-[node name="Paddle Right Body" type="CollisionPolygon2D" parent="Area2D/Paddle Right" unique_id=1389327259]
-position = Vector2(-1149.565, 951.32)
-rotation = -0.43633232
-scale = Vector2(-0.25, -0.17)
-polygon = PackedVector2Array(0, -64, -32, -56, -56, -32, -64, 0, -56, 32, -32, 56, 0, 64, 416, 32, 432, 24, 440, 16, 448, 0, 440, -16, 432, -24, 416, -32)
+[node name="Paddle Right" type="AnimatableBody2D" parent="Mechanics" unique_id=1128142517]
+position = Vector2(106, 325)
+
+[node name="One Way Gate" type="Node2D" parent="." unique_id=666587963]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="One Way Gate" unique_id=767166437]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1011980618]
